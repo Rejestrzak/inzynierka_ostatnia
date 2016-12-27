@@ -1,0 +1,50 @@
+﻿@model Inzynierka_ostatnia.Models.Kaczka
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kaczka</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id_matki)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_matki)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_ojca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_ojca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wyklucie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wyklucie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.zyje)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.zyje)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

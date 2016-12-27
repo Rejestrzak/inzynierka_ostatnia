@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Inzynierka_ostatnia.Models.Kaczka>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    <div>Id kaczki: </div>
+    <div>@Html.TextBox("Znajdz_ID")</div>
+    <input type="submit" value="Szukaj"/>
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id_matki)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_ojca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wyklucie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.zyje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.zmiana)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_matki)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_ojca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wyklucie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.zyje)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.zmiana)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

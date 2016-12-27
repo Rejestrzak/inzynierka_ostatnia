@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Inzynierka_ostatnia.Models.Kaczka>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<body>
+    <div>
+        <table>
+            <tr><td>Id</td><td>Matka</td><td>Ojciec</td><td>Data wyklucia</td><td>Czy zyje</td></tr>
+            @foreach (var wiersz in Model)
+            {
+                
+                <tr><td>@wiersz.id</td><td>@wiersz.id_matki</td><td>@wiersz.id_ojca</td><td>@wiersz.wyklucie</td><td>@wiersz.zyje</td></tr>
+            }
+        </table>
+    </div>
+</body>
