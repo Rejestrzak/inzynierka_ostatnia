@@ -91,7 +91,7 @@ namespace Inzynierka_ostatnia.Controllers
 
             foreach (var item in w33)
             {
-                if (nowe_w33.Equals(Convert.ToInt32(item.UID))==true)
+                if (nowe_w33.Contains(Convert.ToInt32(item.UID))==true)
                 {
                     //Tworzenie obiektu w bazie grafowej
                     session.Run("CREATE (k:Ges{UID:{UID}, MATKA:{MATKA}, OJCIEC:{OJCIEC}})", new Dictionary<string, object> { { "UID", item.UID }, { "MATKA", item.MATKA }, { "OJCIEC", item.OJCIEC } });
@@ -100,7 +100,7 @@ namespace Inzynierka_ostatnia.Controllers
 
             foreach (var item in w11)
             {
-                if (nowe_w11.Equals(Convert.ToInt32(item.UID)) == true)
+                if (nowe_w11.Contains(Convert.ToInt32(item.UID)) == true)
                 {
                     //Tworzenie obiektu w bazie grafowej
                     session.Run("CREATE (k:Ges{UID:{UID}, MATKA:{MATKA}, OJCIEC:{OJCIEC}})", new Dictionary<string, object> { { "UID", item.UID }, { "MATKA", item.MATKA }, { "OJCIEC", item.OJCIEC } });
@@ -111,7 +111,11 @@ namespace Inzynierka_ostatnia.Controllers
             dList = session.Run("Match (k:Ges) RETURN  k.UID AS UID, k.MATKA AS MATKA, k.OJCIEC AS OJCIEC").ToList();
 
 
+
+            ViewBag.W333 = w33_UID;
+
             return View();
+            
         }
     }
 }
