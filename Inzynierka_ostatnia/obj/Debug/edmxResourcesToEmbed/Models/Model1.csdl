@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InzynierModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="W11MNALL">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="POCHODZENIE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NUMER1" Type="Int32" />
+    <Property Name="NUMER2" Type="Int32" />
+    <Property Name="DATALEGU" Type="DateTime" Precision="3" />
+    <Property Name="ROD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LEG" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PLEC" Type="Int32" />
+    <Property Name="MATKA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OJCIEC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MASA8T" Type="Int32" />
+    <Property Name="MASA11T" Type="Int32" />
+    <Property Name="PMASY" Type="Double" />
+    <Property Name="PPMASY" Type="Double" />
+    <Property Name="WPW" Type="Int32" />
+    <Property Name="MASA1" Type="Int32" />
+    <Property Name="SUMAZNJAJ" Type="Int32" />
+    <Property Name="LJNAL" Type="Int32" />
+    <Property Name="LJZAP" Type="Int32" />
+    <Property Name="LPISW" Type="Int32" />
+    <Property Name="LJAJZW" Type="Int32" />
+    <Property Name="MASAJAJ" Type="Int32" />
+    <Property Name="DATZNOJ" Type="DateTime" Precision="3" />
+    <Property Name="WADYJAJ" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DLMOS" Type="Int32" />
+    <Property Name="DLPR" Type="Int32" />
+    <Property Name="GRMP" Type="Int32" />
+    <Property Name="OMM" Type="Double" />
+    <Property Name="POMM" Type="Double" />
+    <Property Name="OMT" Type="Double" />
+    <Property Name="POMT" Type="Double" />
+    <Property Name="DATZNPJ" Type="DateTime" Precision="3" />
+    <Property Name="ZDROWIE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="WADY" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DATUB" Type="DateTime" Precision="3" />
+    <Property Name="UWAGI" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="USUN" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="W33MNAll">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="POCHODZENIE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NUMER1" Type="Int32" />
+    <Property Name="NUMER2" Type="Int32" />
+    <Property Name="DATALEGU" Type="DateTime" Precision="3" />
+    <Property Name="ROD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LEG" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PLEC" Type="Int32" />
+    <Property Name="MATKA" Type="Int64" />
+    <Property Name="OJCIEC" Type="Int64" />
+    <Property Name="MASA8T" Type="Int32" />
+    <Property Name="MASA11T" Type="Int32" />
+    <Property Name="PMASY" Type="Double" />
+    <Property Name="PPMASY" Type="Double" />
+    <Property Name="WPW" Type="Int32" />
+    <Property Name="MASA1" Type="Int32" />
+    <Property Name="SUMAZNJAJ" Type="Int32" />
+    <Property Name="LJNAL" Type="Int32" />
+    <Property Name="LJZAP" Type="Int32" />
+    <Property Name="LPISW" Type="Int32" />
+    <Property Name="LJAJZW" Type="Int32" />
+    <Property Name="MASAJAJ" Type="Int32" />
+    <Property Name="DATZNOJ" Type="DateTime" Precision="3" />
+    <Property Name="WADYJAJ" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DLMOS" Type="Int32" />
+    <Property Name="DLPR" Type="Int32" />
+    <Property Name="GRMP" Type="Int32" />
+    <Property Name="OMM" Type="Double" />
+    <Property Name="POMM" Type="Double" />
+    <Property Name="OMT" Type="Double" />
+    <Property Name="POMT" Type="Double" />
+    <Property Name="DATZNPJ" Type="DateTime" Precision="3" />
+    <Property Name="ZDROWIE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="WADY" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DATUB" Type="DateTime" Precision="3" />
+    <Property Name="UWAGI" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="USUN" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="InzynierEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="W11MNALL" EntityType="Self.W11MNALL" />
+    <EntitySet Name="W33MNAll" EntityType="Self.W33MNAll" />
+  </EntityContainer>
+</Schema>

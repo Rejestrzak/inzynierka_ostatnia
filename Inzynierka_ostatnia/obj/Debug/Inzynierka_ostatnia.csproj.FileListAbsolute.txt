@@ -79,7 +79,6 @@ C:\Users\Jakub Krysiński\Desktop\Inzyernika_ostatnia\Inzynierka_ostatnia\Inzyni
 C:\Users\Jakub Krysiński\Desktop\Inzyernika_ostatnia\Inzynierka_ostatnia\Inzynierka_ostatnia\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Jakub Krysiński\Desktop\Inzyernika_ostatnia\Inzynierka_ostatnia\Inzynierka_ostatnia\obj\Debug\Inzynierka_ostatnia.dll
 C:\Users\Jakub Krysiński\Desktop\Inzyernika_ostatnia\Inzynierka_ostatnia\Inzynierka_ostatnia\obj\Debug\Inzynierka_ostatnia.pdb
-C:\Users\Jakub Krysiński\Desktop\Inzyernika_ostatnia\Inzynierka_ostatnia\Inzynierka_ostatnia\obj\Debug\Inzynierka_ostatnia.csprojResolveAssemblyReference.cache
 C:\Users\Jakub Krysiński\Desktop\Inzyernika_ostatnia\Inzynierka_ostatnia\Inzynierka_ostatnia\bin\Neo4j.Driver.dll
 C:\Users\Jakub Krysiński\Desktop\Inzyernika_ostatnia\Inzynierka_ostatnia\Inzynierka_ostatnia\bin\Sockets.Plugin.Abstractions.dll
 C:\Users\Jakub Krysiński\Desktop\Inzyernika_ostatnia\Inzynierka_ostatnia\Inzynierka_ostatnia\bin\Sockets.Plugin.dll
@@ -101,3 +100,8 @@ C:\Users\Jakub Krysiński\Desktop\Inzyernika_ostatnia\Inzynierka_ostatnia\Inzyni
 C:\Users\Jakub Krysiński\Desktop\Inzyernika_ostatnia\Inzynierka_ostatnia\Inzynierka_ostatnia\obj\Debug\Inzynierka_ostatnia.Migrations.AddUser_TypesTable.resources
 C:\Users\Jakub Krysiński\Desktop\Inzyernika_ostatnia\Inzynierka_ostatnia\Inzynierka_ostatnia\obj\Debug\Inzynierka_ostatnia.Migrations.AddUser_TypesTable1.resources
 C:\Users\Jakub Krysiński\Desktop\Inzyernika_ostatnia\Inzynierka_ostatnia\Inzynierka_ostatnia\obj\Debug\Inzynierka_ostatnia.Migrations.AddColumnZmiana.resources
+C:\Users\Jakub Krysiński\Desktop\Inzyernika_ostatnia\Inzynierka_ostatnia\Inzynierka_ostatnia\bin\SendGrid.CSharp.HTTP.Client.dll
+C:\Users\Jakub Krysiński\Desktop\Inzyernika_ostatnia\Inzynierka_ostatnia\Inzynierka_ostatnia\bin\SendGrid.dll
+C:\Users\Jakub Krysiński\Desktop\Inzyernika_ostatnia\Inzynierka_ostatnia\Inzynierka_ostatnia\bin\System.Net.Http.Formatting.dll
+C:\Users\Jakub Krysiński\Desktop\Inzyernika_ostatnia\Inzynierka_ostatnia\Inzynierka_ostatnia\bin\System.Net.Http.Formatting.xml
+C:\Users\Jakub Krysiński\Desktop\Inzyernika_ostatnia\Inzynierka_ostatnia\Inzynierka_ostatnia\obj\Debug\Inzynierka_ostatnia.csprojResolveAssemblyReference.cache
