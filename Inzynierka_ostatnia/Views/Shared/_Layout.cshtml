@@ -33,10 +33,17 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <!--<li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Graph", "Graph")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>-->
+                    <li class="btn-primary btn-lg">@Html.ActionLink("Graph", "Index", "Graph")</li>
+                    
+                    @if (Request.LogonUserIdentity.IsAuthenticated)
+                    {
+                        <li class="btn-primary btn-lg">@Html.ActionLink("Użytkownicy", "Index", "AspNetUsers")</li>
+                    }
+                    
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

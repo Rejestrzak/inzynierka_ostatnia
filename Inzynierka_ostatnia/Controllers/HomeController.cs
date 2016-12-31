@@ -5,8 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using Inzynierka_ostatnia.Models;
 
+
 namespace Inzynierka_ostatnia.Controllers
 {
+
+
     public class HomeController : Controller
     {
 
@@ -15,6 +18,8 @@ namespace Inzynierka_ostatnia.Controllers
 
         public ActionResult Index()
         {
+
+
             return View();
         }
 

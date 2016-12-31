@@ -59,11 +59,16 @@ namespace Inzynierka_ostatnia.Controllers
             //Wypełniamy listę obiektami klasy Gęś, które są już w bazie grafowej
             var dList = session.Run("Match (k:Ges) RETURN  k.UID AS UID, k.MATKA AS MATKA, k.OJCIEC AS OJCIEC").ToList();
 
+            
+
+
             var w33 = from x in ie.W33MNAll
                       select x;
             var w11 = from z in ie.W11MNALL
                       select z;
 
+
+            
 
             //Zbieramy wszystkie UID do osobnych list i konwertujemy na INT, ponieważ w bazue pole UID jest typu varchar
             List<int> w33_UID = new List<int>();
@@ -112,9 +117,9 @@ namespace Inzynierka_ostatnia.Controllers
 
 
 
-            ViewBag.W333 = w33_UID;
+            
 
-            return View();
+            return View(dList);
             
         }
     }
