@@ -13,7 +13,7 @@ namespace Inzynierka_ostatnia.Controllers
     [Authorize(Roles ="admin")]
     public class AspNetUsersController : Controller
     {
-        private InzynierEntities4 db = new InzynierEntities4();
+        private InzynierEntities5 db = new InzynierEntities5();
 
         // GET: AspNetUsers
         public ActionResult Index()

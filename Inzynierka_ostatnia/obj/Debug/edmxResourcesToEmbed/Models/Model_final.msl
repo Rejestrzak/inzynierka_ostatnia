@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InzynierModel3StoreContainer" CdmEntityContainer="InzynierEntities5">
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="InzynierModel3.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="InzynierModel3.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="InzynierModel3.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="InzynierModel3.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="W11MNALL">
+      <EntityTypeMapping TypeName="InzynierModel3.W11MNALL">
+        <MappingFragment StoreEntitySet="W11MNALL">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="POCHODZENIE" ColumnName="POCHODZENIE" />
+          <ScalarProperty Name="NUMER1" ColumnName="NUMER1" />
+          <ScalarProperty Name="NUMER2" ColumnName="NUMER2" />
+          <ScalarProperty Name="DATALEGU" ColumnName="DATALEGU" />
+          <ScalarProperty Name="ROD" ColumnName="ROD" />
+          <ScalarProperty Name="LEG" ColumnName="LEG" />
+          <ScalarProperty Name="PLEC" ColumnName="PLEC" />
+          <ScalarProperty Name="MATKA" ColumnName="MATKA" />
+          <ScalarProperty Name="OJCIEC" ColumnName="OJCIEC" />
+          <ScalarProperty Name="MASA8T" ColumnName="MASA8T" />
+          <ScalarProperty Name="MASA11T" ColumnName="MASA11T" />
+          <ScalarProperty Name="PMASY" ColumnName="PMASY" />
+          <ScalarProperty Name="PPMASY" ColumnName="PPMASY" />
+          <ScalarProperty Name="WPW" ColumnName="WPW" />
+          <ScalarProperty Name="MASA1" ColumnName="MASA1" />
+          <ScalarProperty Name="SUMAZNJAJ" ColumnName="SUMAZNJAJ" />
+          <ScalarProperty Name="LJNAL" ColumnName="LJNAL" />
+          <ScalarProperty Name="LJZAP" ColumnName="LJZAP" />
+          <ScalarProperty Name="LPISW" ColumnName="LPISW" />
+          <ScalarProperty Name="LJAJZW" ColumnName="LJAJZW" />
+          <ScalarProperty Name="MASAJAJ" ColumnName="MASAJAJ" />
+          <ScalarProperty Name="DATZNOJ" ColumnName="DATZNOJ" />
+          <ScalarProperty Name="WADYJAJ" ColumnName="WADYJAJ" />
+          <ScalarProperty Name="DLMOS" ColumnName="DLMOS" />
+          <ScalarProperty Name="DLPR" ColumnName="DLPR" />
+          <ScalarProperty Name="GRMP" ColumnName="GRMP" />
+          <ScalarProperty Name="OMM" ColumnName="OMM" />
+          <ScalarProperty Name="POMM" ColumnName="POMM" />
+          <ScalarProperty Name="OMT" ColumnName="OMT" />
+          <ScalarProperty Name="POMT" ColumnName="POMT" />
+          <ScalarProperty Name="DATZNPJ" ColumnName="DATZNPJ" />
+          <ScalarProperty Name="ZDROWIE" ColumnName="ZDROWIE" />
+          <ScalarProperty Name="WADY" ColumnName="WADY" />
+          <ScalarProperty Name="DATUB" ColumnName="DATUB" />
+          <ScalarProperty Name="UWAGI" ColumnName="UWAGI" />
+          <ScalarProperty Name="USUN" ColumnName="USUN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="W33MNAll">
+      <EntityTypeMapping TypeName="InzynierModel3.W33MNAll">
+        <MappingFragment StoreEntitySet="W33MNAll">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="POCHODZENIE" ColumnName="POCHODZENIE" />
+          <ScalarProperty Name="NUMER1" ColumnName="NUMER1" />
+          <ScalarProperty Name="NUMER2" ColumnName="NUMER2" />
+          <ScalarProperty Name="DATALEGU" ColumnName="DATALEGU" />
+          <ScalarProperty Name="ROD" ColumnName="ROD" />
+          <ScalarProperty Name="LEG" ColumnName="LEG" />
+          <ScalarProperty Name="PLEC" ColumnName="PLEC" />
+          <ScalarProperty Name="MATKA" ColumnName="MATKA" />
+          <ScalarProperty Name="OJCIEC" ColumnName="OJCIEC" />
+          <ScalarProperty Name="MASA8T" ColumnName="MASA8T" />
+          <ScalarProperty Name="MASA11T" ColumnName="MASA11T" />
+          <ScalarProperty Name="PMASY" ColumnName="PMASY" />
+          <ScalarProperty Name="PPMASY" ColumnName="PPMASY" />
+          <ScalarProperty Name="WPW" ColumnName="WPW" />
+          <ScalarProperty Name="MASA1" ColumnName="MASA1" />
+          <ScalarProperty Name="SUMAZNJAJ" ColumnName="SUMAZNJAJ" />
+          <ScalarProperty Name="LJNAL" ColumnName="LJNAL" />
+          <ScalarProperty Name="LJZAP" ColumnName="LJZAP" />
+          <ScalarProperty Name="LPISW" ColumnName="LPISW" />
+          <ScalarProperty Name="LJAJZW" ColumnName="LJAJZW" />
+          <ScalarProperty Name="MASAJAJ" ColumnName="MASAJAJ" />
+          <ScalarProperty Name="DATZNOJ" ColumnName="DATZNOJ" />
+          <ScalarProperty Name="WADYJAJ" ColumnName="WADYJAJ" />
+          <ScalarProperty Name="DLMOS" ColumnName="DLMOS" />
+          <ScalarProperty Name="DLPR" ColumnName="DLPR" />
+          <ScalarProperty Name="GRMP" ColumnName="GRMP" />
+          <ScalarProperty Name="OMM" ColumnName="OMM" />
+          <ScalarProperty Name="POMM" ColumnName="POMM" />
+          <ScalarProperty Name="OMT" ColumnName="OMT" />
+          <ScalarProperty Name="POMT" ColumnName="POMT" />
+          <ScalarProperty Name="DATZNPJ" ColumnName="DATZNPJ" />
+          <ScalarProperty Name="ZDROWIE" ColumnName="ZDROWIE" />
+          <ScalarProperty Name="WADY" ColumnName="WADY" />
+          <ScalarProperty Name="DATUB" ColumnName="DATUB" />
+          <ScalarProperty Name="UWAGI" ColumnName="UWAGI" />
+          <ScalarProperty Name="USUN" ColumnName="USUN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="InzynierModel3.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
