@@ -209,7 +209,7 @@ namespace Inzynierka_ostatnia.Controllers
                       select i;
 
             w33 = from i in ie.W33MNAll
-                  where i.POCHODZENIE.Equals(pochodzenie_z) && i.ROD.Equals(rod_z)
+                  where i.POCHODZENIE.Equals(pochodzenie_z) && i.ROD.Equals(rod_z)//tutaj dalej cechy i dla drugiej płci również
                   select i;
 
 
