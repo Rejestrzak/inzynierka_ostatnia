@@ -9,61 +9,100 @@
 
 }
 
-<h2>Graf</h2>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Alchemy/styles/vendor.css"/>
+    <link rel="stylesheet" href="~/Alchemy/alchemy.css"/>
+    <link rel="stylesheet" href="~/Alchemy/alchemy.min.css"/>
+    <link rel="stylesheet" href="~/Alchemy/alchemy-white.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/font-awesome.css">
+</head>
+<body>
+    <h2>Graf</h2>
 
-<div>
-    @using (Html.BeginForm())
-    {
-        <div style="float:left;margin-right:100px">
-            <p>Osobnik żeński: <br /></p>
-            <p>
-                Pochodzenie:
-                @Html.TextBox("Pochodzenie_z")
-            </p>
-            <p>
-                Ród:
-                @Html.TextBox("Rod_z")
-            </p>
-            <p>
-                Lęg:
-                @Html.TextBox("Leg_z")
-            </p>
-            <p>
-                Masa 8 tydzień:
-                @Html.TextBox("Masa8t_z")
-            </p>
-            <p>
-                Masa 11 tydzień:
-                @Html.TextBox("Masa11t_z")
-            </p>
-        </div>
-        <div style="float:inherit">
-            <p>Osobnik męski: <br /></p>
-            <p>
-                Pochodzenie:
-                @Html.TextBox("Pochodzenie_m")
-            </p>
-            <p>
-                Ród:
-                @Html.TextBox("Rod_m")
-            </p>
-            <p>
-                Lęg:
-                @Html.TextBox("Leg_m")
-            </p>
-            <p>
-                Masa 8 tydzień:
-                @Html.TextBox("Masa8t_m")
-            </p>
-            <p>
-                Masa 11 tydzień:
-                @Html.TextBox("Masa11t_m")
-            </p>
-        </div>
-        <div>
-            <input type="submit" value="Szukaj" />
-        </div>
-    }
-</div>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <div style="float:left;margin-right:100px">
+                <p>Osobnik żeński: <br /></p>
+                <p>
+                    Pochodzenie:
+                    @Html.TextBox("Pochodzenie_z")
+                </p>
+                <p>
+                    Ród:
+                    @Html.TextBox("Rod_z")
+                </p>
+                <p>
+                    Lęg:
+                    @Html.TextBox("Leg_z")
+                </p>
+                <p>
+                    Masa 8 tydzień:
+                    @Html.TextBox("Masa8t_z")
+                </p>
+                <p>
+                    Masa 11 tydzień:
+                    @Html.TextBox("Masa11t_z")
+                </p>
+            </div>
+            <div style="float:inherit">
+                <p>Osobnik męski: <br /></p>
+                <p>
+                    Pochodzenie:
+                    @Html.TextBox("Pochodzenie_m")
+                </p>
+                <p>
+                    Ród:
+                    @Html.TextBox("Rod_m")
+                </p>
+                <p>
+                    Lęg:
+                    @Html.TextBox("Leg_m")
+                </p>
+                <p>
+                    Masa 8 tydzień:
+                    @Html.TextBox("Masa8t_m")
+                </p>
+                <p>
+                    Masa 11 tydzień:
+                    @Html.TextBox("Masa11t_m")
+                </p>
+            </div>
+            <div>
+                <input type="submit" value="Szukaj" />
+            </div>
+        }
 
+
+        <div class="alchemy" id="alchemy"></div>
+
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/d3/d3.js"></script>
+        <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+        <script type="text/javascript" src="~/Alchemy/scripts/vendor.js"></script>
+        <script type="text/javascript" src="~/Alchemy/alchemy.js"></script>
+        <script type="text/javascript"src="~/Alchemy/alchemy.min.js"></script>
+        <script type="text/javascript">
+            var config = {
+                dataSource: "dane.json",
+                graphHeight: function () { return 400},
+                //graphWidth: function () { return 100 },
+                linkDistance: function () { return 40;},
+                caption: function (node) { return node.caption;}
+            };
+
+            alchemy = new Alchemy (config)
+        </script>
+
+
+        <script>
+            //alchemy.begin(config)
+        </script>
+
+
+
+    </div>
+</body>
 

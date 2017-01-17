@@ -54,6 +54,9 @@ namespace Inzynierka_ostatnia.Controllers
             //Uzupełnianie bazy grafowej o brakujące obiekty
 
 
+
+            /*
+
             var driver = GraphDatabase.Driver("bolt://localhost");
             var session = driver.Session();
             //Wypełniamy listę obiektami klasy Gęś, które są już w bazie grafowej
@@ -112,14 +115,17 @@ namespace Inzynierka_ostatnia.Controllers
                 }
             }
 
-            //Tworzenie relacji dla nowych obiektów w bazie
+            var w33_temp = w33;
+            var w11_temp = w11;
+
+            //Tworzenie relacji dla nowych obiektów w bazie - dodany zapis w Web.config
             foreach (var item in w33)
             {
-                if (nowe_w33_UID.Contains(Convert.ToInt32(item.UID))==true)
+                if (nowe_w33_UID.Contains(Convert.ToInt32(item.UID)))
                 {
-                    foreach (var item_1 in w33)
+                    foreach (var item_1 in w33_temp)
                     {
-                        if (item.MATKA==Convert.ToInt32(item_1.UID))
+                        if (item.MATKA == Convert.ToInt32(item_1.UID))
                         {
                             session.Run("MATCH (a:Ges{UID:{UID_1}}),(b:Ges{UID:{UID_2}}) CREATE UNIQUE (a)-[r:MATKA]->(b)", new Dictionary<string, object> { { "UID_1", item_1.UID }, { "UID_2", item.UID } });
                             session.Run("MATCH (a:Ges{UID:{UID_2}}),(b:Ges{UID:{UID_1}}) CREATE UNIQUE (a)-[r:DZIECKO]->(b)", new Dictionary<string, object> { { "UID_1", item_1.UID }, { "UID_2", item.UID } });
@@ -170,7 +176,7 @@ namespace Inzynierka_ostatnia.Controllers
                         }
                     }
 
-                    foreach (var item_1 in w11)
+                    foreach (var item_1 in w11_temp)
                     {
                         if (item.MATKA == item_1.UID)
                         {
@@ -187,6 +193,7 @@ namespace Inzynierka_ostatnia.Controllers
                 }
             }
 
+            
 
 
             dList.Clear();
@@ -194,7 +201,7 @@ namespace Inzynierka_ostatnia.Controllers
 
 
 
-            
+            */
 
             return View();
             
@@ -209,8 +216,19 @@ namespace Inzynierka_ostatnia.Controllers
                       select i;
 
             w33 = from i in ie.W33MNAll
-                  where i.POCHODZENIE.Equals(pochodzenie_z) && i.ROD.Equals(rod_z)//tutaj dalej cechy i dla drugiej płci również
+                  where i.POCHODZENIE.Equals(pochodzenie_z) && i.ROD.Equals(rod_z) && i.LEG.Equals(leg_z) && i.MASA8T.Equals(masa8t_z) && i.MASA11T.Equals(masa11t_z) && i.PLEC == 1
+                  /*tutaj dalej cechy i dla drugiej płci również w kolejnej pętli i będziemy mieć wyselekcjonowane gęsi wg.
+                  kryteriów. Jest to ok?*/ 
                   select i;
+
+            var driver = GraphDatabase.Driver("bolt://localhost");
+            var session = driver.Session();
+            
+            session.Run("MATCH(n) DETACH DELETE n;");
+
+           
+
+
 
 
             return View();

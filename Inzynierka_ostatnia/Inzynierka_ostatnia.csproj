@@ -350,6 +350,11 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Alchemy\alchemy.css" />
+    <Content Include="Alchemy\alchemy.js" />
+    <Content Include="Alchemy\alchemy.min.css" />
+    <Content Include="Alchemy\alchemy.min.js" />
+    <Content Include="Alchemy\vendor.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -397,6 +402,10 @@
     <Content Include="Models\Model_final.edmx.diagram">
       <DependentUpon>Model_final.edmx</DependentUpon>
     </Content>
+    <Content Include="data\dane.json" />
+    <None Include=".bin\bower.cmd" />
+    <None Include=".bin\git.cmd" />
+    <None Include=".bin\node.cmd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -501,6 +510,7 @@
     <Content Include="Views\AspNetUsers\Details.cshtml" />
     <Content Include="Views\AspNetUsers\Edit.cshtml" />
     <Content Include="Views\AspNetUsers\Index.cshtml" />
+    <Content Include="Views\Graph\dane.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
