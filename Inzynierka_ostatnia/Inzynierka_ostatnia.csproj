@@ -338,6 +338,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model_final.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Rody.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Models\User_types.cs" />
     <Compile Include="Models\W11MNALL.cs">
@@ -350,16 +351,23 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Alchemy\alchemy-white.css" />
     <Content Include="Alchemy\alchemy.css" />
     <Content Include="Alchemy\alchemy.js" />
     <Content Include="Alchemy\alchemy.min.css" />
     <Content Include="Alchemy\alchemy.min.js" />
-    <Content Include="Alchemy\vendor.css" />
+    <Content Include="Alchemy\scripts\vendor.js" />
+    <Content Include="Alchemy\styles\fonts\fontawesome-webfont.svg" />
+    <Content Include="Alchemy\styles\images\maze-black.png" />
+    <Content Include="Alchemy\styles\vendor.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -406,6 +414,23 @@
     <None Include=".bin\bower.cmd" />
     <None Include=".bin\git.cmd" />
     <None Include=".bin\node.cmd" />
+    <Content Include="Scripts\d3\d3.js" />
+    <Content Include="Scripts\d3\d3.min.js" />
+    <Content Include="Scripts\d3\README.md" />
+    <Content Include="Scripts\d3\LICENSE" />
+    <Content Include="Scripts\d3\CHANGES.md" />
+    <Content Include="Scripts\d3\API.md" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Alchemy\styles\fonts\fontawesome-webfont.eot" />
+    <Content Include="Alchemy\styles\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Alchemy\styles\fonts\fontawesome-webfont.woff" />
+    <Content Include="Alchemy\styles\fonts\FontAwesome.otf" />
+    <Content Include="Alchemy\styles\images\.DS_Store" />
+    <Content Include="data\dane2.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -456,10 +481,15 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\lodash.core.js" />
+    <Content Include="Scripts\lodash.core.min.js" />
+    <Content Include="Scripts\lodash.js" />
+    <Content Include="Scripts\lodash.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="StyleSheet1.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -511,6 +541,7 @@
     <Content Include="Views\AspNetUsers\Edit.cshtml" />
     <Content Include="Views\AspNetUsers\Index.cshtml" />
     <Content Include="Views\Graph\dane.json" />
+    <Content Include="Views\Graph\dane2.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

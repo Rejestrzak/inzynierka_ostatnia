@@ -37,7 +37,9 @@ namespace Inzynierka_ostatnia.Controllers
         // GET: Graph
         public ActionResult Index()
         {
-            
+
+
+
             //conn_smo();
 
             //Database smo_base = myServer.Databases["inzynier"];
@@ -50,12 +52,12 @@ namespace Inzynierka_ostatnia.Controllers
             //        klucze.Add(item.Name);
             //    }
             //}
-            
+
             //Uzupełnianie bazy grafowej o brakujące obiekty
 
 
-
             /*
+           
 
             var driver = GraphDatabase.Driver("bolt://localhost");
             var session = driver.Session();
@@ -102,7 +104,7 @@ namespace Inzynierka_ostatnia.Controllers
                 if (nowe_w33_UID.Contains(Convert.ToInt32(item.UID))==true)
                 {
                     //Tworzenie obiektu w bazie grafowej
-                    session.Run("CREATE (k:Ges{UID:{UID}, MATKA:{MATKA}, OJCIEC:{OJCIEC}})", new Dictionary<string, object> { { "UID", item.UID }, { "MATKA", item.MATKA }, { "OJCIEC", item.OJCIEC } });
+                    session.Run("CREATE (k:Ges{UID:{UID}, MATKA:{MATKA}, OJCIEC:{OJCIEC}, ROD:{ROD}})", new Dictionary<string, object> { { "UID", item.UID }, { "MATKA", item.MATKA }, { "OJCIEC", item.OJCIEC }, {"ROD", "W33"} });
                 }
             }
 
@@ -111,47 +113,32 @@ namespace Inzynierka_ostatnia.Controllers
                 if (nowe_w11_UID.Contains(Convert.ToInt32(item.UID)) == true)
                 {
                     //Tworzenie obiektu w bazie grafowej
-                    session.Run("CREATE (k:Ges{UID:{UID}, MATKA:{MATKA}, OJCIEC:{OJCIEC}})", new Dictionary<string, object> { { "UID", item.UID }, { "MATKA", item.MATKA }, { "OJCIEC", item.OJCIEC } });
+                    session.Run("CREATE (k:Ges{UID:{UID}, MATKA:{MATKA}, OJCIEC:{OJCIEC}, ROD:{ROD}})", new Dictionary<string, object> { { "UID", item.UID }, { "MATKA", item.MATKA }, { "OJCIEC", item.OJCIEC }, {"ROD", "W11"}  });
                 }
             }
 
-            var w33_temp = w33;
-            var w11_temp = w11;
+            
 
-            //Tworzenie relacji dla nowych obiektów w bazie - dodany zapis w Web.config
+            //Tworzenie relacji dla nowych obiektów w bazie - dodany zapis w Web.config aby mogły działać dwa aktywne DataReader-y
             foreach (var item in w33)
             {
                 if (nowe_w33_UID.Contains(Convert.ToInt32(item.UID)))
                 {
-                    foreach (var item_1 in w33_temp)
+                    foreach (var item_1 in w33)
                     {
                         if (item.MATKA == Convert.ToInt32(item_1.UID))
                         {
                             session.Run("MATCH (a:Ges{UID:{UID_1}}),(b:Ges{UID:{UID_2}}) CREATE UNIQUE (a)-[r:MATKA]->(b)", new Dictionary<string, object> { { "UID_1", item_1.UID }, { "UID_2", item.UID } });
-                            session.Run("MATCH (a:Ges{UID:{UID_2}}),(b:Ges{UID:{UID_1}}) CREATE UNIQUE (a)-[r:DZIECKO]->(b)", new Dictionary<string, object> { { "UID_1", item_1.UID }, { "UID_2", item.UID } });
+                            session.Run("MATCH (a:Ges{UID:{UID_1}}),(b:Ges{UID:{UID_2}}) CREATE UNIQUE (a)-[r:GASIE]->(b)", new Dictionary<string, object> { { "UID_2", item_1.UID }, { "UID_1", item.UID } });
+                            
                         }
 
                         if (item.OJCIEC == Convert.ToInt32(item_1.UID))
                         {
                             session.Run("MATCH (a:Ges{UID:{UID_1}}),(b:Ges{UID:{UID_2}}) CREATE UNIQUE (a)-[r:OJCIEC]->(b)", new Dictionary<string, object> { { "UID_1", item_1.UID }, { "UID_2", item.UID } });
-                            session.Run("MATCH (a:Ges{UID:{UID_2}}),(b:Ges{UID:{UID_1}}) CREATE UNIQUE (a)-[r:DZIECKO]->(b)", new Dictionary<string, object> { { "UID_1", item_1.UID }, { "UID_2", item.UID } });
+                            session.Run("MATCH (a:Ges{UID:{UID_1}}),(b:Ges{UID:{UID_2}}) CREATE UNIQUE (a)-[r:GASIE]->(b)", new Dictionary<string, object> { { "UID_2", item_1.UID }, { "UID_1", item.UID } });
                         }
-                    }
-
-                    foreach (var item_1 in w11)
-                    {
-                        if (item.MATKA == Convert.ToInt32(item_1.UID))
-                        {
-                            session.Run("MATCH (a:Ges{UID:{UID_1}}),(b:Ges{UID:{UID_2}}) CREATE UNIQUE (a)-[r:MATKA]->(b)", new Dictionary<string, object> { { "UID_1", item_1.UID }, { "UID_2", item.UID } });
-                            session.Run("MATCH (a:Ges{UID:{UID_2}}),(b:Ges{UID:{UID_1}}) CREATE UNIQUE (a)-[r:DZIECKO]->(b)", new Dictionary<string, object> { { "UID_1", item_1.UID }, { "UID_2", item.UID } });
-                        }
-
-                        if (item.OJCIEC == Convert.ToInt32(item_1.UID))
-                        {
-                            session.Run("MATCH (a:Ges{UID:{UID_1}}),(b:Ges{UID:{UID_2}}) CREATE UNIQUE (a)-[r:OJCIEC]->(b)", new Dictionary<string, object> { { "UID_1", item_1.UID }, { "UID_2", item.UID } });
-                            session.Run("MATCH (a:Ges{UID:{UID_2}}),(b:Ges{UID:{UID_1}}) CREATE UNIQUE (a)-[r:DZIECKO]->(b)", new Dictionary<string, object> { { "UID_1", item_1.UID }, { "UID_2", item.UID } });
-                        }
-                    }
+                    }                    
                 }
             }
 
@@ -161,33 +148,19 @@ namespace Inzynierka_ostatnia.Controllers
             {
                 if (nowe_w11_UID.Contains(Convert.ToInt32(item.UID)) == true)
                 {
-                    foreach (var item_1 in w33)
+                    
+                    foreach (var item_1 in w11)
                     {
                         if (item.MATKA == item_1.UID)
                         {
                             session.Run("MATCH (a:Ges{UID:{UID_1}}),(b:Ges{UID:{UID_2}}) CREATE UNIQUE (a)-[r:MATKA]->(b)", new Dictionary<string, object> { { "UID_1", item_1.UID }, { "UID_2", item.UID } });
-                            session.Run("MATCH (a:Ges{UID:{UID_2}}),(b:Ges{UID:{UID_1}}) CREATE UNIQUE (a)-[r:DZIECKO]->(b)", new Dictionary<string, object> { { "UID_1", item_1.UID }, { "UID_2", item.UID } });
+                            session.Run("MATCH (a:Ges{UID:{UID_1}}),(b:Ges{UID:{UID_2}}) CREATE UNIQUE (a)-[r:GASIE]->(b)", new Dictionary<string, object> { { "UID_2", item_1.UID }, { "UID_1", item.UID } });
                         }
 
                         if (item.OJCIEC == item_1.UID)
                         {
                             session.Run("MATCH (a:Ges{UID:{UID_1}}),(b:Ges{UID:{UID_2}}) CREATE UNIQUE (a)-[r:OJCIEC]->(b)", new Dictionary<string, object> { { "UID_1", item_1.UID }, { "UID_2", item.UID } });
-                            session.Run("MATCH (a:Ges{UID:{UID_2}}),(b:Ges{UID:{UID_1}}) CREATE UNIQUE (a)-[r:DZIECKO]->(b)", new Dictionary<string, object> { { "UID_1", item_1.UID }, { "UID_2", item.UID } });
-                        }
-                    }
-
-                    foreach (var item_1 in w11_temp)
-                    {
-                        if (item.MATKA == item_1.UID)
-                        {
-                            session.Run("MATCH (a:Ges{UID:{UID_1}}),(b:Ges{UID:{UID_2}}) CREATE UNIQUE (a)-[r:MATKA]->(b)", new Dictionary<string, object> { { "UID_1", item_1.UID }, { "UID_2", item.UID } });
-                            session.Run("MATCH (a:Ges{UID:{UID_2}}),(b:Ges{UID:{UID_1}}) CREATE UNIQUE (a)-[r:DZIECKO]->(b)", new Dictionary<string, object> { { "UID_1", item_1.UID }, { "UID_2", item.UID } });
-                        }
-
-                        if (item.OJCIEC == item_1.UID)
-                        {
-                            session.Run("MATCH (a:Ges{UID:{UID_1}}),(b:Ges{UID:{UID_2}}) CREATE UNIQUE (a)-[r:OJCIEC]->(b)", new Dictionary<string, object> { { "UID_1", item_1.UID }, { "UID_2", item.UID } });
-                            session.Run("MATCH (a:Ges{UID:{UID_2}}),(b:Ges{UID:{UID_1}}) CREATE UNIQUE (a)-[r:DZIECKO]->(b)", new Dictionary<string, object> { { "UID_1", item_1.UID }, { "UID_2", item.UID } });
+                            session.Run("MATCH (a:Ges{UID:{UID_1}}),(b:Ges{UID:{UID_2}}) CREATE UNIQUE (a)-[r:GASIE]->(b)", new Dictionary<string, object> { { "UID_2", item_1.UID }, { "UID_1", item.UID } });
                         }
                     }
                 }
@@ -208,23 +181,22 @@ namespace Inzynierka_ostatnia.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string pochodzenie_z, string rod_z, string leg_z, int masa8t_z, int masa11t_z, string pochodzenie_m, string rod_m, string leg_m, int masa8t_m, int masa11t_m)
+        public ActionResult Index(string rod, string masa8t_z, string masa11t_z, string pmasy_z, string ppmasy_z, string dlm_z, string dlpr_z, string sumaznjaj_z, string masajaj_z, string grmp_z, string omm_z, string masa8t_m, string masa11t_m, string pmasy_m, string ppmasy_m, string dlm_m, string dlpr_m, string grmp_m, string omm_m)
         {
-            var w33 = from i in ie.W33MNAll
-                      select i;
-            var w11 = from i in ie.W11MNALL
-                      select i;
 
-            w33 = from i in ie.W33MNAll
-                  where i.POCHODZENIE.Equals(pochodzenie_z) && i.ROD.Equals(rod_z) && i.LEG.Equals(leg_z) && i.MASA8T.Equals(masa8t_z) && i.MASA11T.Equals(masa11t_z) && i.PLEC == 1
-                  /*tutaj dalej cechy i dla drugiej płci również w kolejnej pętli i będziemy mieć wyselekcjonowane gęsi wg.
-                  kryteriów. Jest to ok?*/ 
-                  select i;
+            //var driver = GraphDatabase.Driver("bolt://localhost");
+            //var session = driver.Session();
 
-            var driver = GraphDatabase.Driver("bolt://localhost");
-            var session = driver.Session();
+            if (rod=="W11")
+            {
+
+            }
+            else if (rod=="W33")
+            {
+
+            }
             
-            session.Run("MATCH(n) DETACH DELETE n;");
+            
 
            
 

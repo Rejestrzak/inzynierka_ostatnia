@@ -2,107 +2,162 @@
 
 
 
+
 @{
     ViewBag.Title = "Graph";
-    
-    
+
+
 
 }
-
 <head>
-    <link rel="stylesheet" type="text/css" href="~/Alchemy/styles/vendor.css"/>
-    <link rel="stylesheet" href="~/Alchemy/alchemy.css"/>
-    <link rel="stylesheet" href="~/Alchemy/alchemy.min.css"/>
-    <link rel="stylesheet" href="~/Alchemy/alchemy-white.css" />
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/font-awesome.css">
+<link rel="stylesheet" href="~/StyleSheet1.css"/>    
 </head>
-<body>
-    <h2>Graf</h2>
 
+<br/>
+    <h2>Graf</h2>
     <div>
         @using (Html.BeginForm())
         {
+            <p>
+                Ród: (W11 lub W33)
+                @Html.TextBox("Rod")
+            </p>
+
             <div style="float:left;margin-right:100px">
-                <p>Osobnik żeński: <br /></p>
-                <p>
-                    Pochodzenie:
-                    @Html.TextBox("Pochodzenie_z")
-                </p>
-                <p>
-                    Ród:
-                    @Html.TextBox("Rod_z")
-                </p>
-                <p>
-                    Lęg:
-                    @Html.TextBox("Leg_z")
-                </p>
-                <p>
-                    Masa 8 tydzień:
-                    @Html.TextBox("Masa8t_z")
-                </p>
-                <p>
-                    Masa 11 tydzień:
-                    @Html.TextBox("Masa11t_z")
-                </p>
+                <p><strong>Osobnik żeński:</strong> <br /></p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Masa 8 tydzień:</td>
+                            <td>@Html.TextBox("Masa8t_z")</td>  
+                        </tr>
+                        <tr>
+                            <td>Masa 11 tydzień:</td>
+                            <td>@Html.TextBox("Masa11t_z")</td>
+                        </tr>
+                        <tr>
+                            <td>Przyrost masy (tylko W11):</td>
+                            <td>@Html.TextBox("pmasy_z")</td>
+                        </tr>
+                        <tr>
+                            <td>Procentowy przyrost masy (tylko W11):</td>
+                            <td>@Html.TextBox("ppmasy_z")</td>
+                        </tr>
+                        <tr>
+                            <td>Długość mostka (tylko W33):</td>
+                            <td>@Html.TextBox("dlmos_z")</td>
+                        </tr>
+                        <tr>
+                            <td>Długość przedramienia (tylko W33):</td>
+                            <td>@Html.TextBox("dlpr_z")</td>
+                        </tr>
+                        <tr>
+                            <td>Suma zniesionych jaj (tylko W11):</td>
+                            <td>@Html.TextBox("sumaznjaj_z")</td>
+                        </tr>
+                        <tr>
+                            <td>Masa jaj zważonych (tylko W11):</td>
+                            <td>@Html.TextBox("masajaj_z")</td>
+                        </tr>
+                        <tr>
+                            <td>Głębokość mięśni piersiowych (tylko W33):</td>
+                            <td>@Html.TextBox("grmp_z")</td>
+                        </tr>
+                        <tr>
+                            <td>Oszacowana masa mięśnia (tylko W11):</td>
+                            <td>@Html.TextBox("omm_z")</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div style="float:inherit">
-                <p>Osobnik męski: <br /></p>
-                <p>
-                    Pochodzenie:
-                    @Html.TextBox("Pochodzenie_m")
-                </p>
-                <p>
-                    Ród:
-                    @Html.TextBox("Rod_m")
-                </p>
-                <p>
-                    Lęg:
-                    @Html.TextBox("Leg_m")
-                </p>
-                <p>
-                    Masa 8 tydzień:
-                    @Html.TextBox("Masa8t_m")
-                </p>
-                <p>
-                    Masa 11 tydzień:
-                    @Html.TextBox("Masa11t_m")
-                </p>
+                <p><strong>Osobnik męski:</strong>   <br /></p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Masa 8 tydzień:</td>
+                            <td>@Html.TextBox("Masa8t_m")</td>
+                        </tr>
+                        <tr>
+                            <td>Masa 11 tydzień:</td>
+                            <td>@Html.TextBox("Masa11t_m")</td>
+                        </tr>
+                        <tr>
+                            <td>Przyrost masy (tylko W11):</td>
+                            <td>@Html.TextBox("pmasy_m")</td>
+                        </tr>
+                        <tr>
+                            <td>Procentowy przyrost masy (tylko W11):</td>
+                            <td>@Html.TextBox("ppmasy_m")</td>
+                        </tr>
+                        <tr>
+                            <td>Długość mostka (tylko W33):</td>
+                            <td>@Html.TextBox("dlmos_m")</td>
+                        </tr>
+                        <tr>
+                            <td>Długość przedramienia (tylko W33):</td>
+                            <td>@Html.TextBox("dlpr_m")</td>
+                        </tr>
+                        <tr>
+                            <td>Głębokość mięśni piersiowych (tylko W33):</td>
+                            <td>@Html.TextBox("grmp_m")</td>
+                        </tr>
+                        <tr>
+                            <td>Oszacowana masa mięśnia (tylko W11):</td>
+                            <td>@Html.TextBox("omm_m")</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+            <br />
+            <br />
+            <br />
+            <br />
             <div>
                 <input type="submit" value="Szukaj" />
             </div>
+            <br />
+            <br />
+            <br />
+            <br />
         }
 
+        
+        
 
+    <script type="text/javascript" src="~/Alchemy/scripts/vendor.js"></script>
+    <script type="text/javascript" src="~/Alchemy/alchemy.js"></script>
+        
         <div class="alchemy" id="alchemy"></div>
-
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="bower_components/d3/d3.js"></script>
-        <script src="bower_components/lodash/dist/lodash.compat.js"></script>
-        <script type="text/javascript" src="~/Alchemy/scripts/vendor.js"></script>
-        <script type="text/javascript" src="~/Alchemy/alchemy.js"></script>
-        <script type="text/javascript"src="~/Alchemy/alchemy.min.js"></script>
         <script type="text/javascript">
+
             var config = {
-                dataSource: "dane.json",
-                graphHeight: function () { return 400},
+                dataSource: "http://localhost:21710/data/dane2.json",
+                forceLocked: false,
+                graphHeight: function () { return 700},
                 //graphWidth: function () { return 100 },
                 linkDistance: function () { return 40;},
-                caption: function (node) { return node.caption;}
+                caption: function (node) { return node.caption; },
+                nodeMouseOver: 'id',
+                cluster: true,
+                clusterColours: ["#1B9E77","#D95F02","#7570B3","#E7298A","#66A61E","#E6AB02"]
+
             };
 
-            alchemy = new Alchemy (config)
+            alchemy = new Alchemy(config)
+
+            
+
         </script>
 
+        <a href="~/data/dane2.json">Dane 2</a>
 
-        <script>
-            //alchemy.begin(config)
-        </script>
+        @*<script>
+            alchemy.begin(config)
+        </script>*@
 
 
 
     </div>
-</body>
+
 
