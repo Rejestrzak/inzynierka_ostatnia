@@ -14,7 +14,7 @@ namespace Inzynierka_ostatnia.Controllers
 {
 
     [Authorize]
-    public class KaczkasController : Controller
+    public class TestsController : Controller
     {
         private KaczkaDBCtxt db = new KaczkaDBCtxt();
         

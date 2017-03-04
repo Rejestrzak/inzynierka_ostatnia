@@ -64,7 +64,7 @@
                             <td>@Html.TextBox("grmp_z")</td>
                         </tr>
                         <tr>
-                            <td>Oszacowana masa mięśnia (tylko W11):</td>
+                            <td>Oszacowana masa mięśnia (tylko W33):</td>
                             <td>@Html.TextBox("omm_z")</td>
                         </tr>
                     </tbody>
@@ -103,7 +103,7 @@
                             <td>@Html.TextBox("grmp_m")</td>
                         </tr>
                         <tr>
-                            <td>Oszacowana masa mięśnia (tylko W11):</td>
+                            <td>Oszacowana masa mięśnia (tylko W33):</td>
                             <td>@Html.TextBox("omm_m")</td>
                         </tr>
                     </tbody>
@@ -133,21 +133,32 @@
 
             var config = {
                 dataSource: "http://localhost:21710/data/dane2.json",
-                forceLocked: false,
-                graphHeight: function () { return 700},
-                //graphWidth: function () { return 100 },
-                linkDistance: function () { return 40;},
-                caption: function (node) { return node.caption; },
-                nodeMouseOver: 'id',
-                cluster: true,
-                clusterColours: ["#1B9E77","#D95F02","#7570B3","#E7298A","#66A61E","#E6AB02"]
+                nodeTypes: { "role":["gasior","ges"]
+                },
+                nodeStyle:{
+                    "all": {
+                        "borderColor": "#127DC1",
+                     },
+                    "gasior":{
+                        "color": "#C3C30E",
+                    "selected": {
+                    "color": "#ffffff",
+                    },                    
+                    "highlighted": {
+                    "color": "#b4dcff"
+                    }
+                  }
+                },
 
+                forceLocked: true,
+                directedEdges:true,
+                graphHeight: function () { return 700},
+                linkDistance: function () { return 200},
+                caption: function (node) { return node.id; },
+                nodeMouseOver: 'id',
             };
 
             alchemy = new Alchemy(config)
-
-            
-
         </script>
 
         <a href="~/data/dane2.json">Dane 2</a>

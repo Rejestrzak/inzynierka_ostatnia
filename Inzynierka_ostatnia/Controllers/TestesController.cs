@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace Inzynierka_ostatnia.Controllers
 {
-    public class KaczkiController : Controller
+    public class TestesController : Controller
     {
 
         private KaczkaDBCtxt baza = new KaczkaDBCtxt();
